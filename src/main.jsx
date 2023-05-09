@@ -10,15 +10,17 @@ import UpdatedCoffee from './components/UpdatedCoffee';
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<App></App>
+    element: <App></App>,
+    loader: () => fetch(`http://localhost:5000/coffee`),
   },
   {
-    path: '/addcoffee',
-    element: <AddCoffee></AddCoffee>
-  }, {
-    path: '/updatecoffee',
-    element:<UpdatedCoffee></UpdatedCoffee>
-  }
+    path: "/addcoffee",
+    element: <AddCoffee></AddCoffee>,
+  },
+  {
+    path: "/updatecoffee",
+    element: <UpdatedCoffee></UpdatedCoffee>,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
